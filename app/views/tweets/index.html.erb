@@ -1,0 +1,14 @@
+<div class="d-flex align-items-center justify-content-between">
+  <h1>Tweets</h1>
+
+  <% if Current.user.twitter_accounts.any? %>
+    <%= link_to "Schedule Tweet", new_tweet_path, class: "btn btn-primary" %>
+  <% else %>
+    <%= link_to "Connect a Twitter Account", "/auth/twitter", method: :post, class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<%# This is a lazy loader for the querying %>
+<%# When render receives an ActiveRecord query it interpretates and execute an each for the elements %>
+  <%# showing them with a partial created inside that view's folder, in this case 'views/tweets/_tweet.html.erb %>
+<%= render @tweets %>
