@@ -1,0 +1,3 @@
+setup:
+  config:
+    REDIS_HOST: redis
