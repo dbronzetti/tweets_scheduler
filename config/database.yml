@@ -86,5 +86,3 @@ test:
 production:
   <<: *default
   database: <%= "#{ENV.fetch('POSTGRES_DB')}_production" %>
-  username: app
-  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
