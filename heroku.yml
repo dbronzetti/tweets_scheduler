@@ -11,4 +11,10 @@ build:
 
 run:
   web: bundle exec rails s
-  worker: bundle exec sidekiq
+  sidekiq:
+    command: bundle exec sidekiq
+    image: web
+
+release:
+  command: bin/rails db:migrate
+  image: web
