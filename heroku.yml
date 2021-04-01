@@ -8,8 +8,7 @@ setup:
 build:
   docker:
     web: Dockerfile
-  config:
-    REDIS_HOST: redis
 
 run:
-  worker: bundle exec sidekiq
+  web: bundle exec rails s
+  sidekiq: bundle exec sidekiq
