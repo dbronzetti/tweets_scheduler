@@ -12,9 +12,11 @@ build:
 run:
   web: bundle exec rails s
   sidekiq:
-    command: bundle exec sidekiq
+    command:
+      - bundle exec sidekiq
     image: web
 
 release:
-  command: bin/rails db:migrate
+  command:
+    - bin/rails db:migrate
   image: web
